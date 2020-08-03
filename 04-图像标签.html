@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>World</title>
+	</head>
+	<body>
+		<!-- 在该文件的同级目录下，有一个images目录，并且在images目录下有a.jpg和b.jpg，以下同理 -->
+		<h4>下层目录</h4>
+		<img src="images/a.jpg" width="300" height="200"" alt="图片上的文字"/>
+		<img src="images/b.jpg" width="300" height="200"/>
+		<hr/>
+		<!-- 测试相对路径 -->
+		<h4>上层目录</h4>
+		<img src="../a.jpg" width="300" height="200"  />
+		<hr/>
+		<h4>当层目录</h4>
+		<img src="b.jpg" width="300" height="200"  />
+		<hr/>
+		<img src="../img/a.jpg"  width="300" height="200">	
+		<h4>远程目录</h4>
+		<img src="https://static.cnblogs.com/images/adminlogo.gif" />
+	</body>
+</html>

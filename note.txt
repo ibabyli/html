@@ -1,0 +1,344 @@
+1、HTML的简介
+
+	*什么是HTML？
+		-HypeText Markup Language：超文本标记语言，网页语言
+		**超文本：超出文本的范畴，使用HTML可以轻松实现这样的操作
+		**标记：HTML所有的操作都是通过标记实现的，标记就是标签，<标签名称>
+		**网页语言：
+
+	*第一个HTML程序
+		-创建java文件：.java
+			先编译，后运行（jvm）
+		-HTML后缀是：.html .htm
+			**直接通过浏览器就可以运行
+		--代码
+			这是我的<font size="5" color="red">第一个程序</font>
+
+	*HTML的规范（遵循）
+		1、一个HTML文件开始标签和结束标签<html></html>
+		2、HTML包含两部分内容
+			(1)、<head>设置相关信息</head>
+			(2)、<body>显示在页面上的内容全部都写在body里面</body>
+		3、HTML的标签有开始标签，也要有结束标签
+			- <head></head>
+		4、HTML的代码不区分大小写
+		5、有些标签，没有结束标签，在标签内结束
+			-比如：
+			*换行 <br/>
+			*分隔符 <hr/>
+
+	*HTML的操作思想（**理解**）
+		网页中有很多数据，不同的数据可能需要不同的显示效果，这个时候需要使用标签把要操作的数据包起来（封装起来），
+		通过修改标签的属性值实现标签内数据样式的变化。
+		一个标签相当于一个容器，想要修改容器内数据的样式，只需要改变容器的属性值，就可以实现容器内数据样式的变化。
+
+2、HTML中常用的标签
+
+	1、文字标签和注释标签
+		*文字标签：修改文字的样式
+			- <font></font>
+			- 属性：
+				*size：文字的大小 取值范围 1-7，超出了7，默认还是7
+				*color：文字颜色
+					-两种表示方法
+						*英文单词：red、green、blue、black、white、yellow、gray
+						**使用十六进制数表示 #ffffff ： GRB
+							-通过工具类实现不同的颜色 #66cc66
+		*注释标签
+			-Java注释：三种
+			-HTML注释：<!--  HTML的注释 -->
+	
+	2、标题标签、水平线标签和特殊字符
+
+		*标题标签
+			- <h1></h1>  <h2></h2> ...... <h6></h6>
+			- 从h1到h6，大小是依次变小，同时会自动换行
+
+		*水平线标签
+			- <hr/>
+			- 属性
+				* size：水平线的粗细
+				* color：颜色
+			- 代码
+				<hr size="5" color="blue"/>
+			
+		*特殊字符
+			- 想要在网页上显示这样的内容 <html>:是网页的开始
+			- 需要对特殊字符进行转义
+				* <	 &lt;
+				* >  &gt;
+				* 空格  &nbsp;
+				* &  &amp;
+
+	3、列表标签
+
+		- 比如现在显示这样的效果
+			山水集团
+				财务部
+				学工部
+				人事部
+		** <dl></dl> ： 表示列表的范围
+			** 在dl里面	<dt></dt>：上层内容（没有缩进）
+			** 在dl里面	<dd></dd>: 下层内容（有缩进）
+		- 代码
+			<dl>
+				<dt>山水集团</dt>
+				<dl>财务部</dl>
+				<dl>学工部</dl>
+				<dl>人事部</dl>
+			</dl>
+
+		- 想要在页面上显示这样的内容（有序列表）
+			1.财务部
+			2.学工部
+			3.人事部
+
+			a.财务部
+			b.学工部
+			c.人事部
+
+			i.财务部
+			ii.学工部
+			iii.人事部
+		** <ol></ol> ： 有序列表的范围
+			- 属性 type : 设置排序的方式 1(默认)  a i
+			** 在ol标签里面 <li>具体内容</li>
+		- 代码
+			<ol>
+				<li>财务部</li>
+				<li>学工部</li>
+				<li>人事部</li>
+			</ol>
+
+		- 想要在页面上显示这样的效果（无序列表）
+			特殊符号（方框） 财务部
+			特殊符号（方框） 人事部
+
+			** <ul></ul>：表示无序列表的范围
+				属性： type：空心圆（circle）、实心圆（disc）、实心方块（Square）、默认是disc
+				在ul里面 <li></li>
+			- 代码
+				<ul type="square">
+					<li>财务部</li>
+					<li>学工部</li>
+					<li>人事部</li>
+				</ul>
+
+	4、图像标签（重要）
+		<img src="图片的路径"/>
+			-src：图片的路径
+			-width：图片的宽度
+			-height：图片的高度
+			-alt：图片上显示的文字，把鼠标移动到图片上，停留片刻显示内容
+				** 有些浏览器下不显示（没有效果），一般不用这个。
+		
+	5、路径的介绍
+		*分类：两类
+		**绝对路径
+			- D:\Java\JavaWeb\day01\a.jpg
+			- http://www.baidu.com/b.jpg
+		**相对路径
+			- 一个文件相对于另外一个文件的位置
+			分为三种：
+				** html文件和图片在一个路径下，可以直接写文件名称
+					<img src="a.jpg"/>
+				** 图片在html的下层目录
+					在HTML文件中，使用img文件夹下面的a.jpg
+					<img src="img\a.jpg"/>
+				** 图片在HTML文件的上层目录
+					<img src="../a.jpg"/>
+					**如果是上层的上层
+						../../
+
+	6、超链接标签（重要）
+		*链接资源（重要）
+			- <a href="01-hello.html">只是一个超链接1</a>
+			 ** href：链接的资源的地址
+			 ** target：设置打开的方式，默认是在当前页打开
+				-- _blank： 在一个新窗口打开
+				-- _self：	在当前页面打开  默认
+			- 当超链接不需要到任何的地址，在href里面加#
+
+		*定位资源
+			** 如果想要定位资源：定义一个位置
+				<a name="top">顶部</a>
+			** 回到这个位置
+				<a href="#top">回到顶部</a>
+			** 引入一个标签 per：原样输出
+
+	7、表格标签（重要）
+		* 可以对数据进行格式化，使数据显示更加清晰
+
+		<table></table>：表示表格的范围
+			- border：表格线
+			- bordercolor：表格线的颜色
+			- cellspacing：单元格之间的距离
+			- width：表格的宽度
+			- height：表格的高度
+		
+		** 在table里面：<tr></tr>
+			- 设置显示方式 aligh：left、center、right
+			** 在tr里面：<td></td>
+			- 设置显示方式 aligh：left、center、right
+			** 使用th也可以实现居中和加粗
+		* 代码
+			<table border="1" bordercolor="blue" cellspacing="0" align="center" width="200" height="100">
+		*分析表格的写法
+			- 首先定义一个表格的范围使用table
+				- 定义一行使用tr
+				- 定义一个单元格使用 td
+		
+		** 操作技巧
+			- 首先数有多少行（tr），数每行里面有多少个单元格（td）
+		
+		** 表格的标题
+			<caption></caption>
+
+		** 合并单元格
+			- rowspan：跨行
+			- colspan：跨列
+
+	8、表单标签（最重要）
+		* 可以提交数据到**网站上的服务器，这个过程可以使用表单标签实现
+		* <form></form>：定义一个表单的范围
+			- 属性
+				** action：提交到地址，默认提交到当前页面
+				** method: 表单提交方式
+					- 常用的有两种：get和post，默认是get请求
+				
+				** 面试题目：get和post区别
+					1、get请求地址栏会携带提交的数据，post不会携带（请求体里面，后面http协议的时候再详解）
+					2、get请求安全级别较低，post较高
+					3、get请求数据有大小的限制，post没有限制。
+				** enctype：一般请求不需要用到这个属性，做文件上传时候需要设置这个属性。
+
+		** 输入项：可以输入内容或者选择内容的部分
+			- 大部分的输入项 使用 <input type="输入项的类型"/>
+
+			*********** 在输入项里面要有一个name属性，为了用数据库保存数据 **********
+
+			*** 普通输入项： <input type="text"/>
+
+			*** 密码输入项： <input type="password"/>
+
+			*** 单选输入项： <input type="radio"/>
+				- 在里面需要属性 name
+				- name的属性值必须要相同
+				- 必须有一个value值
+
+				**** 实现默认选中的属性
+					-- checked="checked"
+
+			*** 复选输入项： <input type="checkbox"/>
+				- 在里面需要属性 name
+				- name的属性值必须要相同
+				- 必须有一个value值
+
+				**** 实现默认选中的属性
+					-- checked="checked"
+
+			*** 文件输入项：（在后面上传时候用到）
+				<input type="file"/>
+
+			*** 隐藏项：
+				<input type="hidden"/>
+
+			*** 下拉输入项（不是在input标签里面）
+				<select name="birthday">
+					<option value="0">请选择</option>
+					<option value="1995">1995</option>
+					<option value="1996">1996</option>
+					<option value="1997">1997</option>
+				  </select>
+				**** 默认选中
+					selected="selected"
+			
+			*** 文本域：
+				<textarea cols="10" row="5"></textarea>
+
+			*** 提交按钮：
+				<input type="sumbit"/>
+				<input type="sumbit" value="注册"/>
+
+			当在输入项里面写了name属性之后
+				file:///D:/Java/JavaWeb/day01/09-表单标签1.html?phone=15872586170&pwd=wyj0320.cn&sex=male&love=y&love=p&f=&birthday=1997&txt=love&hid=
+			
+			** ?输入项name的值-输入的值&
+			** 参数类似于Map集合里面的key-value
+
+			*** 使用图片提交
+				<input type="image" src="图片路径"/>
+			
+			*** 重置按钮：回到输入项的初的状态
+				<input  type="reset"/>
+
+			*** 普通按钮（js里面用到）
+				<input type="button" value="普通按钮"/>
+
+	9、案例：使用表单标签实现注册页面
+		- 使用表格实现页面效果
+		- 超链接不想要有效果，使用href="#"
+		- 如果表格里面的单元格没有内容，使用空格作为占位符 &nbsp;
+		- 使用图片标签提交表单 <input type="image" src="图片的路径"/>
+
+	10、HTML中的其他常见标签的使用
+		b：加粗
+		s：删除线
+		u：下划线
+		i：斜体
+
+		per：原样输出
+
+		sup:上标
+		sub:下标
+
+		p：段落标签 比br多一行
+
+		（CSS）
+		div：自动换行
+		span：在一行显示
+
+	11、HTML的头标签的使用
+		* HTML两部分组成 head和body
+		** 在head里面的标签就是头标签
+
+		** title标签：表示在标签上显示的内容
+		** meta标签：设置页面的一些相关内容（用的比较少）
+			- <meta name="keywords" content="熊猫，金丝猴，恐龙"/>
+			  <meta http-equiv="refresh" content="3;url=01-hello.html"/>
+		** base标签：设置超链接的基本设置
+			- 可以统一设置超链接的打开方式
+			<base target="_blank"/>
+		** link标签：引入外部文件
+			** css中使用到，可以使用link标签引入css文件
+
+	12、框架标签的使用
+		<frameset>
+			- rows：按照行进行划分
+				** <frameset rows="80,*">
+			- cols：按照列进行划分
+				** <frameset cols="80,*">
+		<frame>
+			- 具体显示的页面（name的值自己写的）
+				- <frame name="lower_left" src="a.html">
+		
+		*** 使用框架标签的时候，不能写在body里面，使用了框架标签，需要把body去掉
+
+	<frameset rows="80,*">		//把页面划分为上下两部分
+		<frame name="top" src="01-hello.html">		//上面部分
+
+		<frameset cols="150,*">		//把下面部分划分成左右两部分
+			<frame name="left" src="02-标题和水平线标签.html">		//左边部分
+			<frame name="right" src="03-列表标签.html">		//右边部分
+
+		</frameset>
+	</frameset>
+
+	* 如果在左边的页面超链接，想让内容显示在右边的页面中
+		- 设置超链接里面属性 target值设置为你自己取得名称
+		- <a href="01-hello.html" target="right">超链接</a>
+		
+				
+
+					
+			

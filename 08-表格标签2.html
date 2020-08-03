@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>World</title>
+	</head>
+	<body>
+		<!--
+		测试跨列
+		第一行：1
+		第二行到第四行：3
+		-->
+		<table border="1" cellspacing="0" bordercolor="blue" width="200">
+			<tr>
+				<td colspan="3" align="center">人员信息</td>
+			</tr>
+			<tr>
+				<td>岳不群</td>
+				<td>女</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>令狐冲</td>
+				<td>男</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td>东方不败</td>
+				<td>女</td>
+				<td>24</td>
+			</tr>
+		</table>
+		<hr/>
+		<!--
+		测试跨行
+		第一行：3
+		第二行到第三行：2
+		-->
+		<table border="1" cellspacing="0" bordercolor="blue" width="200">
+			<tr>
+				<td>岳不群</td>
+				<td>女</td>
+				<td rowspan="3" align="center">40</td>
+			</tr>
+			<tr>
+				<td>令狐冲</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>东方不败</td>
+				<td>女</td>
+			</tr>
+		</table>
+	</body>
+</html>

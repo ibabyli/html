@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>World</title>
+	</head>
+	<body>
+	<!-- 测试表单 -->
+		<form action="01-hello.html" method="post">
+			手机号码：<input type="text" name="phone"/><br/>
+			创建密码：<input type="password" name="pwd"/><br/>
+			性别：<input type="radio" name="sex" value="female"/>女 <input type="radio" name="sex" value="male" checked="checked"/>男<br/>
+			爱好：<input type="checkbox" name="love" value="y"/>羽毛球 <input type="checkbox" name="love" value="p" checked="checked"/>乒乓球 <input type="checkbox" name="love" value="z"/>足球
+			<br/>
+			文件：<input type="file" name="f"/><br/>
+			生日：<select name="birthday">
+					<option value="0">请选择</option>
+					<option value="1995">1995</option>
+					<option value="1996">1996</option>
+					<option value="1997"  selected="selected">1997</option>
+
+				  </select>
+				  <br/>
+			自我描述：<textarea cols="10" rows="5" name="txt"></textarea>
+			<br/>
+			隐藏项：<input type="hidden" name="hid"/> <br/>
+			<input type="submit" value="注册"/>
+			<br/>
+			<!--<input type="image" src="images/a.jpg"> -->
+			<input  type="reset"/>
+			<br/>
+			<input type="button" value="普通按钮"/>
+		</form>
+	</body>
+</html>

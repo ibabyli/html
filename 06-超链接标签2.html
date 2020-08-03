@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<title>World</title>
+	</head>
+
+	<body>
+		<a name="top">顶部</a>
+		<pre>
+			public class Calculate
+			{
+				private int num1,num2;
+				
+				public Calculate(int num1,int num2)
+				{
+					this.num1=num1;
+					this.num2=num2;
+				}
+				
+				public int add()
+				{
+					return num1+num2;
+				}
+				
+				public int sub()
+				{
+					return num1-num2;
+				}
+				
+				public int mul()
+				{
+					return num1*num2;
+				}
+				
+				public int div()
+				{
+					return num1/num2;
+				}
+				
+				public int mod()
+				{
+					return num1%num2;
+				}
+				
+				public void printInfo()
+				{
+					System.out.println("加法：");
+					System.out.println(num1 + "+" + num2 +"的结果为：" + add());
+					System.out.println("减法：");
+					System.out.println(num1 + "-" + num2 +"的结果为：" + sub());
+					System.out.println("乘法：");
+					System.out.println(num1 + "*" + num2 +"的结果为：" + mul());
+					System.out.println("除法：");
+					System.out.println(num1 + "/" + num2 +"的结果为：" + div());
+					System.out.println("取余：");
+					System.out.println(num1 + "%" + num2 +"的结果为：" + mod());
+				}
+				
+			}
+
+
+		</pre>
+
+		<a href="#top">回到顶部</a>
+
+	</body>
+
+</html>
